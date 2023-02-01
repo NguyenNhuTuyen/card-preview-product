@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root{
+      --a:hsl(158, 36%, 37%);
+      --b:hsl(30, 38%, 92%);
+      --c:hsl(140, 40%, 26%);
+      --d:hsl(228, 12%, 48%);
+      --e:hsl(0, 0%, 100%);
+    }
+    .attribution { font-size: 11px; text-align: center; background-color: var(--b); position: fixed; bottom: 5px; left: 50%; transform: translateX(-50%);}
+    .attribution a { color: hsl(228, 45%, 44%); }
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .gray{
+      color: var(--d)
+    }
+
+    .green{
+      color: var(--a)
+    }
+    
+    body{
+      font-family: Montserrat, sans-serif;
+    }
+
+    .font-fraunces{
+      font-family: fraunces, sans-serif;
+    }
+    .card{
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--b);
+      
+    }
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+       width: 700px; 
+       height: 500px; 
+       background-color: var(--e);
+       border-radius: 10px;
+       overflow: hidden; 
+       display: flex;
+      }
+    .image-product-desktop{
+      width: auto;
+      height: 100%;
+      
+    }
+    .image-product-desktop img{
+      width: auto;
+      height: 100%;
+    }
+    .content{
+      padding: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .title{
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+    }
+    .heading{
+      /* margin: 15px 0; */
+      font-size: 40px;
+    }
+    .descr{
+      font-size: 17px;
+      line-height: 26px;
+    }
+    .pricing{
+      display: flex;
+      align-items: center;
+      /* margin-top: 15px; */
+    }
+
+    .new-pricing{
+      font-size: 40px;
+      margin-right: 20px;
+    }
+
+    .btn{
+      display: flex;
+    align-items: center;
+    width: 100%;
+    background: var(--a);
+    height: 40px;
+    border-radius: 6px;
+    justify-content: center;
+    /* margin-top: 15px; */
+    }
+
+    .btn:hover,
+    .btn button:hover{
+      cursor: pointer;
+      background-color: var(--c);
+    }
+
+    .icon-cart{
+      margin-right: 10px;
+      color: white;
+    }
+    .btn-cart{
+      background-color: transparent;
+      color: white;
+      outline: none;
+      border: none;
+    }
+    .image-product-mobile{
+      width: 100%;
+      display: none;
+    }
+
+    .image-product-mobile img{
+      width: 100%;
+    }
+
+    @media all and (max-width:740px){
+      .container{
+        flex-direction: column;
+        justify-content: space-between;
+        width: 90vw;
+        height: 90vh;
+      }
+      .image-product-desktop{
+        display: none;
+      }
+      .image-product-mobile{
+        display: block;
+      }
+
+      .title{
+        font-size: 12px;
+      }
+      .content{
+        padding: 20px;
+        flex-grow: 1;
+      }
+
+      .heading{
+        font-size: 28px;
+        line-height: 30px;
+      }
+
+      .descr {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .new-pricing{
+        font-size: 28px;
+      }
+      .old-pricing{
+        font-size: 13px;
+      }
+
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="card">
+    <div class="container">
+      <div class="image-product-desktop">
+        <img src="./images/image-product-desktop.jpg" alt="img-desktop">
+      </div>
+      <div class="image-product-mobile">
+        <img src="./images/image-product-mobile.jpg" alt="img-mobile">
+      </div>
+    
+      <div class="content">
+        <p class="title gray">preview</p>
+        <h2 class="heading font-fraunces">Gabrielle Essence Eau De Parfum</h2>
+  
+        <p class="descr gray"> A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
+  
+        <div class="pricing">
+          <p class="new-pricing green font-fraunces">$149.99</p>
+        <p class="old-pricing gray"><del>$169.99</del></p>
+        </div>
+        <div class="btn">
+          <ion-icon class="icon-cart" name="cart-outline"></ion-icon>
+        <button class="btn-cart">
+           Add to Cart
+        </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">nnt</a>.
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
